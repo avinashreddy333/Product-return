@@ -1,4 +1,6 @@
 import streamlit as st
+st.write("THIS IS ROOT APP.PY WITH UPLOAD")
+import streamlit as st
 import pandas as pd
 import numpy as np
 from utils import PredictionUtils, PRODUCT_CATEGORIES, CUSTOMER_LOCATIONS, PAYMENT_METHODS
@@ -7,8 +9,8 @@ from pathlib import Path
 
 # Page configuration
 st.set_page_config(
-    page_title="E-Commerce Return Prediction",
-    page_icon="📦",
+    page_title="E-Commerce Product Return Prediction model",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -54,7 +56,7 @@ def main():
         return
     
     # Sidebar navigation
-    st.sidebar.title("📦 Navigation")
+    st.sidebar.title(" Navigation")
     page = st.sidebar.selectbox("Choose a page", ["Home", "Predict", "Model Insights", "Dataset Preview"])
     
     if page == "Home":
@@ -68,10 +70,10 @@ def main():
 
 def home_page():
     """Home page with project information"""
-    st.markdown('<h1 class="main-header">🛍️ E-Commerce Product Return Prediction System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> E-Commerce Product Return Prediction System</h1>', unsafe_allow_html=True)
     
     st.markdown("""
-    ## 📋 Project Overview
+    ##  Project Overview
     
     This intelligent system predicts whether a product is likely to be returned based on various factors such as:
     
@@ -80,14 +82,14 @@ def home_page():
     - **Transaction Details**: Payment method, delivery time, discounts
     - **Historical Data**: Return history rate
     
-    ## 🎯 Key Features
+    ##  Key Features
     
     - **Machine Learning Powered**: Uses Random Forest classifier for accurate predictions
     - **Real-time Predictions**: Get instant predictions with probability scores
     - **Interactive Dashboard**: User-friendly interface with visualizations
     - **Data Insights**: Explore feature importance and dataset statistics
     
-    ## 🚀 How to Use
+    ##  How to Use
     
     1. Navigate to the **Predict** page using the sidebar
     2. Fill in the product and customer details
@@ -100,7 +102,7 @@ def home_page():
     
     # Display model performance metrics if available
     if Path('model.pkl').exists():
-        st.markdown("### 📊 Model Performance")
+        st.markdown("###  Model Performance")
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
@@ -114,13 +116,13 @@ def home_page():
 
 def prediction_page(pred_utils):
     """Main prediction interface"""
-    st.markdown('<h1 class="main-header">🔮 Predict Product Return</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Predict Product Return</h1>', unsafe_allow_html=True)
     
     # Create two columns for input form
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 📦 Product Details")
+        st.markdown("###  Product Details")
         
         product_category = st.selectbox(
             "Product Category",
@@ -154,7 +156,7 @@ def prediction_page(pred_utils):
         )
     
     with col2:
-        st.markdown("### 👤 Customer Details")
+        st.markdown("###  Customer Details")
         
         customer_age = st.number_input(
             "Customer Age",
@@ -185,7 +187,7 @@ def prediction_page(pred_utils):
         )
     
     # Additional customer history section
-    st.markdown("### 📈 Customer History")
+    st.markdown("###  Customer History")
     col3, col4 = st.columns(2)
     
     with col3:
@@ -214,7 +216,7 @@ def prediction_page(pred_utils):
     col5, col6, col7 = st.columns([1, 2, 1])
     
     with col6:
-        if st.button("🔮 Predict Return", type="primary", use_container_width=True):
+        if st.button("Predict Return", type="primary", use_container_width=True):
             # Prepare input data
             input_data = {
                 'Product_Category': product_category,
@@ -245,17 +247,17 @@ def prediction_page(pred_utils):
 def display_prediction_result(prediction, return_probability):
     """Display the prediction result with visualizations"""
     st.markdown("---")
-    st.markdown("### 🎯 Prediction Result")
+    st.markdown("###  Prediction Result")
     
     # Determine result message and styling
     if prediction == 1:
         result_class = "likely-return"
-        result_emoji = "⚠️"
+        result_emoji = ""
         result_text = "Likely to be Returned"
         result_color = "red"
     else:
         result_class = "not-likely-return"
-        result_emoji = "✅"
+        result_emoji = ""
         result_text = "Not Likely to be Returned"
         result_color = "green"
     
@@ -279,7 +281,7 @@ def display_prediction_result(prediction, return_probability):
         st.plotly_chart(fig, use_container_width=True)
     
     # Display additional metrics
-    st.markdown("### 📊 Detailed Metrics")
+    st.markdown("###  Detailed Metrics")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
@@ -306,10 +308,10 @@ def display_prediction_result(prediction, return_probability):
 
 def insights_page(pred_utils):
     """Model insights and feature importance"""
-    st.markdown('<h1 class="main-header">📊 Model Insights</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Model Insights</h1>', unsafe_allow_html=True)
     
     # Feature importance
-    st.markdown("### 🎯 Feature Importance")
+    st.markdown("###  Feature Importance")
     importance_df = pred_utils.get_feature_importance()
     
     if importance_df is not None:
@@ -323,7 +325,7 @@ def insights_page(pred_utils):
         st.info("Feature importance is only available for Random Forest models.")
     
     # Model information
-    st.markdown("### 🤖 Model Information")
+    st.markdown("###  Model Information")
     col1, col2 = st.columns(2)
     
     with col1:
@@ -340,14 +342,14 @@ def insights_page(pred_utils):
 
 def dataset_page():
     """Dataset preview and statistics"""
-    st.markdown('<h1 class="main-header">📋 Dataset Preview</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Dataset Preview</h1>', unsafe_allow_html=True)
     
     # Load dataset
     if Path('data.csv').exists():
         df = pd.read_csv('data.csv')
         
         # Dataset summary
-        st.markdown("### 📊 Dataset Summary")
+        st.markdown("###  Dataset Summary")
         summary = PredictionUtils.get_data_summary(df)
         
         col1, col2, col3, col4, col5 = st.columns(5)
@@ -364,12 +366,12 @@ def dataset_page():
             st.metric("Avg Delivery", summary['avg_delivery_time'])
         
         # Data overview chart
-        st.markdown("### 📈 Data Overview")
+        st.markdown("###  Data Overview")
         fig = PredictionUtils.create_data_overview_chart(df)
         st.plotly_chart(fig, use_container_width=True)
         
         # Dataset preview
-        st.markdown("### 👀 Dataset Preview")
+        st.markdown("###  Dataset Preview")
         
         # Show sample of the data
         sample_size = st.slider("Number of rows to display", 5, 50, 10)
@@ -381,7 +383,7 @@ def dataset_page():
         )
         
         # Column information
-        st.markdown("### 📝 Column Information")
+        st.markdown("###  Column Information")
         col_info = pd.DataFrame({
             'Column': df.columns,
             'Data Type': df.dtypes.values,
