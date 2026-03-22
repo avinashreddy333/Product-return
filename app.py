@@ -1,10 +1,11 @@
+import streamlit as st
 st.set_page_config(
     page_title="E-Commerce Product Return Prediction model",
     page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-import streamlit as st
+
 st.write("THIS IS ROOT APP.PY WITH UPLOAD")
 import streamlit as st
 import pandas as pd
