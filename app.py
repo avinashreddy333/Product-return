@@ -1,3 +1,9 @@
+st.set_page_config(
+    page_title="E-Commerce Product Return Prediction model",
+    page_icon="",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 import streamlit as st
 st.write("THIS IS ROOT APP.PY WITH UPLOAD")
 import streamlit as st
@@ -8,12 +14,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 
 # Page configuration
-st.set_page_config(
-    page_title="E-Commerce Product Return Prediction model",
-    page_icon="",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 # Custom CSS for better styling
 st.markdown("""
