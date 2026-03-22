@@ -1,0 +1,51 @@
+product_category,product_price,customer_age,customer_location,purchase_history_count,return_history_rate,delivery_time,payment_method,discount_applied,product_rating,Prediction,Return_Probability,Prediction_Label
+Beauty,63.95,25,New York,3,0.175,2,Cash on Delivery,20,3.8,0,0.4251213824288766,Not Return
+Sports,12.47,28,Georgia,12,0.154,1,PayPal,5,3.3,0,0.4235572553311123,Not Return
+Automotive,39.14,45,Ohio,8,0.156,8,Debit Card,10,4.4,1,0.5456688707806877,Return
+Books,6.91,38,California,11,0.131,5,Credit Card,10,4.0,0,0.43732854384246117,Not Return
+Beauty,11.44,28,Georgia,7,0.072,4,UPI,30,3.8,0,0.2732764514735218,Not Return
+Health,38.76,41,New York,7,0.248,6,Debit Card,25,4.0,1,0.5044428503644945,Return
+Home & Garden,59.79,36,Michigan,7,0.136,1,Debit Card,15,4.5,0,0.4619274091828388,Not Return
+Beauty,37.98,46,Michigan,4,0.636,7,Credit Card,20,3.7,0,0.3423160661746595,Not Return
+Automotive,30.19,26,California,6,0.108,7,Debit Card,25,3.8,0,0.426973140521638,Not Return
+Books,26.03,31,Ohio,8,0.234,1,UPI,0,4.7,0,0.3401722599098857,Not Return
+Sports,10.15,30,North Carolina,8,0.076,2,Debit Card,20,3.5,0,0.3428455120321479,Not Return
+Automotive,18.62,18,Texas,7,0.188,4,UPI,25,4.3,0,0.48111955819149577,Not Return
+Automotive,22.91,38,Ohio,6,0.201,1,Credit Card,20,3.4,0,0.27988703720602887,Not Return
+Home & Garden,77.15,38,North Carolina,8,0.148,3,PayPal,15,3.5,0,0.3522003627111272,Not Return
+Toys,43.59,35,Michigan,5,0.435,6,Debit Card,0,3.7,0,0.3672991707783495,Not Return
+Books,8.08,32,Florida,6,0.226,6,PayPal,15,4.2,0,0.3441491979724098,Not Return
+Clothing,42.92,18,New York,6,0.588,1,UPI,30,4.8,0,0.35608092574708955,Not Return
+Automotive,24.34,29,California,18,0.101,10,Debit Card,0,3.9,0,0.4426459708334529,Not Return
+Toys,19.27,30,New York,5,0.039,7,Cash on Delivery,5,2.6,0,0.41638013139491437,Not Return
+Clothing,54.02,25,Illinois,9,0.397,7,PayPal,25,4.3,1,0.5224419682386111,Return
+Books,75.55,33,Illinois,11,0.216,3,Debit Card,0,5.0,1,0.546390358281061,Return
+Electronics,69.76,39,Ohio,8,0.33,8,PayPal,30,3.9,0,0.414832886214342,Not Return
+Health,16.92,57,Michigan,8,0.25,10,Debit Card,30,2.4,0,0.4708056576111603,Not Return
+Toys,25.86,37,Michigan,7,0.093,3,Credit Card,15,3.9,0,0.27842514869477,Not Return
+Food,43.16,38,Texas,14,0.397,1,PayPal,20,3.8,1,0.532656475277331,Return
+Electronics,72.27,34,Texas,10,0.352,1,Cash on Delivery,0,3.7,0,0.4346338336273908,Not Return
+Health,22.57,18,Texas,8,0.151,3,Cash on Delivery,25,4.6,0,0.44542882782838533,Not Return
+Home & Garden,28.54,34,Florida,10,0.412,13,UPI,0,4.9,1,0.5269482311982312,Return
+Beauty,13.67,35,Georgia,10,0.171,8,Debit Card,10,4.3,0,0.3911942136381181,Not Return
+Sports,12.72,64,Pennsylvania,9,0.28,2,PayPal,20,3.7,0,0.4240102528997969,Not Return
+Food,63.44,32,Georgia,6,0.166,3,UPI,25,4.7,0,0.48909344439195224,Not Return
+Home & Garden,98.0,38,New York,5,0.096,2,PayPal,25,2.6,0,0.46953055966401375,Not Return
+Books,31.26,34,Georgia,6,0.027,5,Debit Card,5,3.2,0,0.3277964039517609,Not Return
+Home & Garden,73.91,20,Florida,10,0.165,3,Cash on Delivery,15,3.3,0,0.3997916081320714,Not Return
+Beauty,44.23,48,New York,5,0.137,3,Credit Card,5,3.8,0,0.3967043813487696,Not Return
+Books,19.76,44,Georgia,2,0.361,4,Cash on Delivery,25,4.2,0,0.4816021662180273,Not Return
+Food,44.22,44,Florida,11,0.366,1,UPI,20,3.6,1,0.5036660960511262,Return
+Beauty,113.34,24,Pennsylvania,5,0.294,3,Credit Card,0,3.1,0,0.48867041371670394,Not Return
+Clothing,32.18,51,Georgia,11,0.303,3,UPI,0,4.6,0,0.3510805718195717,Not Return
+Sports,115.78,18,Florida,13,0.114,3,Debit Card,20,3.6,0,0.36800981142135086,Not Return
+Food,5.0,42,Texas,7,0.084,2,Credit Card,25,3.9,1,0.5975481575959607,Return
+Clothing,63.91,61,Michigan,10,0.346,13,UPI,30,4.2,1,0.6089298198959324,Return
+Health,35.5,23,Texas,10,0.125,9,Debit Card,0,3.8,0,0.401145305553932,Not Return
+Food,26.07,28,Michigan,7,0.381,1,Cash on Delivery,30,3.8,0,0.3327621749075449,Not Return
+Health,35.64,36,California,5,0.202,6,Debit Card,0,4.6,0,0.400366893533104,Not Return
+Books,6.75,28,California,10,0.346,2,PayPal,0,3.9,0,0.33050646395881267,Not Return
+Clothing,27.78,18,California,5,0.111,3,Debit Card,15,4.5,0,0.3476133483197848,Not Return
+Sports,44.07,35,Pennsylvania,8,0.279,5,Debit Card,15,4.2,1,0.549377882392626,Return
+Beauty,108.02,22,Texas,10,0.285,7,PayPal,10,5.0,0,0.4836149233778312,Not Return
+Automotive,21.88,40,Michigan,9,0.303,3,UPI,5,4.1,0,0.35695528212374944,Not Return

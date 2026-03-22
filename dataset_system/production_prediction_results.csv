@@ -1,0 +1,201 @@
+Product_Category,Price,Quantity,User_Age,Location,Payment_Type,Shipping_Type,Discount,Delivery_Days,Order_Count,Return_Rate,Rating,Return_Status,Prediction,Return_Probability,Prediction_Label,Confidence_Level
+Beauty,133.79,4,37.0,Ohio,Credit Card,Overnight,10,5,12,0.15,4.8,Not Returned,1,0.6849795984144452,Return,Medium-High
+Sports,31.48,5,,Ohio,Debit Card,Express,5,5,5,0.06,5.0,Not Returned,0,0.44669886457874275,Not Return,Medium
+Automotive,30.01,5,40.0,Texas,UPI,Same Day,15,3,15,0.006,4.8,Not Returned,1,0.777373851401845,Return,High
+Books,62.83,1,61.0,North Carolina,Debit Card,Standard,20,8,15,0.421,3.6,Returned,0,0.4184388881183781,Not Return,Medium
+Beauty,254.79,3,34.0,North Carolina,UPI,Express,15,6,11,0.141,2.5,Not Returned,0,0.4718196877146305,Not Return,Medium
+Health,48.08,2,39.0,Texas,Credit Card,Overnight,0,6,10,0.073,2.7,Not Returned,0,0.35264654542362006,Not Return,Medium-Low
+,30.73,3,51.0,California,PayPal,Standard,10,3,6,0.116,4.6,Not Returned,0,0.1654620719565041,Not Return,Very Low
+Beauty,96.71,5,45.0,New York,Debit Card,Standard,0,4,13,0.153,3.1,Returned,1,0.8731844991690799,Return,Very High
+Automotive,85.31,2,32.0,Ohio,PayPal,Standard,0,1,13,0.187,2.7,Not Returned,0,0.27436119802105097,Not Return,Low
+Books,18.99,3,51.0,Ohio,UPI,Same Day,30,1,13,0.145,2.9,Returned,1,0.6448378358472014,Return,Medium-High
+Sports,27.59,4,24.0,California,Debit Card,Overnight,0,1,7,0.008,3.0,Returned,1,0.6305248273574806,Return,Medium-High
+Automotive,119.93,3,34.0,Ohio,Cash on Delivery,Express,10,1,16,0.042,4.6,Returned,0,0.21924409243654738,Not Return,Low
+Automotive,65.71,2,26.0,Georgia,PayPal,Same Day,10,12,13,0.208,3.5,Returned,1,0.6111893995088962,Return,Medium-High
+Home & Garden,5.0,1,46.0,New York,Debit Card,Same Day,15,8,8,0.134,2.3,Not Returned,1,0.7729433028586292,Return,High
+Toys,68.98,1,55.0,Michigan,PayPal,Same Day,10,8,10,0.095,3.7,Returned,1,0.5556191956740332,Return,Medium
+Books,102.91,4,41.0,Ohio,Debit Card,Standard,0,3,9,0.167,3.9,Not Returned,1,0.6207275027028448,Return,Medium-High
+Clothing,21.03,1,39.0,Texas,Credit Card,Overnight,5,1,10,0.096,3.2,Not Returned,0,0.322686182120639,Not Return,Medium-Low
+Automotive,82.23,2,24.0,Georgia,PayPal,Same Day,10,1,9,0.175,4.9,Not Returned,0,0.17710470896026728,Not Return,Very Low
+Toys,241.07,1,27.0,Ohio,Cash on Delivery,Express,0,10,11,0.155,3.3,Returned,0,0.2885589144471096,Not Return,Low
+Clothing,63.86,2,20.0,Georgia,Cash on Delivery,Overnight,5,6,7,0.13,4.8,Not Returned,1,0.7825056652595058,Return,High
+Books,,4,18.0,Pennsylvania,UPI,Express,0,7,14,0.128,4.3,Not Returned,0,0.47869474885264884,Not Return,Medium
+Electronics,27.93,4,32.0,Michigan,Debit Card,Overnight,0,5,11,0.168,4.6,Not Returned,1,0.5503958789248525,Return,Medium
+Health,45.23,1,33.0,Illinois,PayPal,Express,5,2,15,0.23,2.6,Returned,0,0.46713674859177845,Not Return,Medium
+Toys,62.8,4,70.0,Texas,UPI,Standard,0,3,13,0.067,3.8,Not Returned,1,0.6137106487656553,Return,Medium-High
+Food,47.3,2,61.0,Texas,PayPal,Same Day,10,1,15,0.15,,Not Returned,0,0.28576840310918733,Not Return,Low
+Electronics,70.21,1,46.0,New York,Debit Card,Express,15,1,20,0.106,2.3,Not Returned,1,0.7643235832006093,Return,High
+Health,39.16,3,69.0,Georgia,Cash on Delivery,Overnight,20,7,5,0.313,4.8,Returned,0,0.39399940669364925,Not Return,Medium-Low
+Home & Garden,52.59,2,58.0,California,Credit Card,Same Day,0,1,9,0.04,2.9,Not Returned,0,0.22929531185891455,Not Return,Low
+Beauty,106.52,1,,Texas,Cash on Delivery,Same Day,0,1,17,0.076,3.1,Returned,1,0.5484570283804882,Return,Medium
+Sports,17.14,3,54.0,Georgia,UPI,Overnight,0,3,9,0.019,2.7,Returned,0,0.2371009507122709,Not Return,Low
+Food,49.3,1,48.0,Georgia,Credit Card,Express,10,4,11,0.076,4.4,Not Returned,0,0.2091238290412239,Not Return,Low
+Home & Garden,49.17,1,33.0,Florida,UPI,Standard,15,1,5,0.118,2.2,Returned,1,0.6155450645980804,Return,Medium-High
+Books,102.37,2,18.0,Florida,Debit Card,Standard,0,5,17,0.06,4.3,Returned,1,0.6651537082079296,Return,Medium-High
+Home & Garden,36.45,1,46.0,Illinois,Credit Card,Express,25,4,12,0.141,4.7,Returned,0,0.35397304030892934,Not Return,Medium-Low
+Beauty,80.46,2,18.0,Pennsylvania,UPI,Same Day,0,10,10,0.084,4.2,Not Returned,1,0.5089526569729036,Return,Medium
+Books,120.59,2,37.0,Illinois,Debit Card,Same Day,10,4,21,0.096,4.4,Not Returned,0,0.44454406957410986,Not Return,Medium
+Food,8.46,3,28.0,Ohio,Cash on Delivery,Same Day,15,6,19,0.247,4.5,Not Returned,1,0.7018211740085203,Return,High
+,127.97,3,19.0,California,Debit Card,Same Day,20,2,11,0.097,2.8,Not Returned,1,0.8133283015581313,Return,Very High
+Clothing,18.41,3,55.0,Ohio,PayPal,Express,15,2,9,0.07,5.0,Returned,1,0.6157183717011331,Return,Medium-High
+Sports,16.7,3,37.0,North Carolina,Debit Card,Same Day,20,1,8,0.044,3.2,Not Returned,1,0.5999878610625935,Return,Medium
+Food,5.0,2,40.0,Ohio,Debit Card,Overnight,5,2,13,0.113,3.6,Not Returned,1,0.5038502033850875,Return,Medium
+Clothing,21.7,1,51.0,New York,PayPal,Same Day,20,3,7,0.214,3.4,Returned,1,0.8366697824056373,Return,Very High
+Health,44.51,2,37.0,Ohio,UPI,Standard,0,9,9,0.073,4.2,Not Returned,1,0.5036112786312223,Return,Medium
+Food,31.66,2,44.0,Illinois,UPI,Same Day,20,2,16,0.236,3.2,Not Returned,0,0.27490497425587274,Not Return,Low
+Health,29.48,1,50.0,Texas,Debit Card,Express,10,15,12,0.106,3.8,Returned,0,0.19559124366802402,Not Return,Very Low
+Books,16.42,2,46.0,Texas,PayPal,Standard,20,6,16,0.237,2.5,Returned,1,0.8280320400805743,Return,Very High
+Clothing,97.56,2,42.0,Florida,PayPal,Express,10,5,12,0.194,4.9,Returned,1,0.5457367425249349,Return,Medium
+Sports,105.91,3,64.0,California,Cash on Delivery,Express,10,4,11,0.033,4.4,Returned,0,0.2230322951990992,Not Return,Low
+Beauty,65.12,5,56.0,California,UPI,Standard,10,3,16,0.232,3.4,Not Returned,1,0.6367595123496704,Return,Medium-High
+Automotive,8.18,2,36.0,New York,Credit Card,Express,15,2,12,0.026,3.2,Not Returned,1,0.5506777440648337,Return,Medium
+Home & Garden,345.85,1,24.0,Illinois,UPI,Express,0,1,14,0.031,4.3,Not Returned,0,0.24060318085344598,Not Return,Low
+Electronics,51.02,1,47.0,Florida,UPI,Same Day,0,2,5,0.064,3.0,Not Returned,1,0.8267994237857471,Return,Very High
+Sports,72.65,4,41.0,North Carolina,Cash on Delivery,Overnight,0,12,15,0.315,3.8,Returned,1,0.8403797886009274,Return,Very High
+Clothing,11.61,4,63.0,California,Credit Card,Express,0,6,8,0.166,4.9,Not Returned,0,0.3223621311069781,Not Return,Medium-Low
+Automotive,44.24,1,52.0,Texas,Cash on Delivery,Express,20,11,8,0.041,2.9,Not Returned,1,0.7833277309849243,Return,High
+Sports,64.85,2,49.0,Ohio,Credit Card,Express,0,2,15,0.02,4.1,Not Returned,0,0.3417845844049932,Not Return,Medium-Low
+Clothing,39.38,1,38.0,Ohio,Debit Card,Same Day,30,1,9,0.187,4.0,Not Returned,1,0.7143003863847278,Return,High
+Toys,98.0,1,24.0,Florida,Credit Card,Overnight,5,4,9,0.134,3.6,Not Returned,0,0.39324714078447415,Not Return,Medium-Low
+Toys,144.07,1,35.0,Illinois,Cash on Delivery,Standard,0,2,12,0.151,3.2,Not Returned,1,0.5895751666195846,Return,Medium
+Health,13.34,1,45.0,Illinois,UPI,Same Day,15,4,12,0.162,4.9,Not Returned,0,0.423044887603239,Not Return,Medium
+Sports,96.07,5,18.0,Pennsylvania,Credit Card,Same Day,15,1,7,0.27,3.1,Returned,1,0.8811634532663647,Return,Very High
+Toys,63.75,2,56.0,Michigan,Credit Card,Overnight,10,1,16,0.107,1.9,Returned,1,0.873725350378494,Return,Very High
+Clothing,44.51,1,69.0,California,PayPal,Overnight,10,5,9,0.209,4.3,Returned,1,0.8905203252221268,Return,Very High
+Health,10.87,3,18.0,Illinois,UPI,Same Day,15,12,10,0.049,2.5,Returned,1,0.790656288461786,Return,High
+Clothing,169.33,4,18.0,Texas,Debit Card,Standard,0,5,13,0.014,4.4,Not Returned,0,0.38352954259359867,Not Return,Medium-Low
+Health,63.89,5,41.0,Florida,Cash on Delivery,Same Day,30,6,15,0.187,5.0,Not Returned,1,0.6189902687377398,Return,Medium-High
+Sports,8.98,1,29.0,North Carolina,Debit Card,Overnight,30,4,18,0.042,4.3,Not Returned,1,0.7595379299802542,Return,High
+Automotive,35.92,1,41.0,Pennsylvania,UPI,Standard,15,4,8,0.143,4.8,Not Returned,0,0.2205188657536002,Not Return,Low
+Beauty,60.01,1,36.0,Georgia,Credit Card,Overnight,0,1,15,0.281,5.0,Not Returned,0,0.34879973875754405,Not Return,Medium-Low
+Food,70.52,1,22.0,New York,Credit Card,Standard,15,2,8,0.02,4.7,Returned,0,0.39702520923833745,Not Return,Medium-Low
+Automotive,39.85,1,57.0,North Carolina,UPI,Express,0,9,14,0.13,4.0,Returned,1,0.6340287543293645,Return,Medium-High
+Books,60.79,2,44.0,Georgia,Credit Card,Overnight,0,3,11,0.014,5.0,Not Returned,0,0.3645998481950255,Not Return,Medium-Low
+Clothing,300.97,1,29.0,Ohio,Credit Card,Overnight,5,9,15,0.102,5.0,Not Returned,1,0.5352319235842111,Return,Medium
+Books,179.81,1,60.0,New York,Credit Card,Same Day,10,4,13,0.002,5.0,Not Returned,0,0.39703855902962676,Not Return,Medium-Low
+Automotive,19.02,1,30.0,California,Cash on Delivery,Overnight,20,4,17,0.023,3.2,Returned,0,0.41824865183071136,Not Return,Medium
+Health,26.12,1,19.0,Texas,Cash on Delivery,Overnight,15,3,8,0.062,2.3,Returned,0,0.49556563781832014,Not Return,Medium
+Food,40.44,1,,New York,PayPal,Express,15,6,13,0.013,3.1,Not Returned,0,0.4095460893365585,Not Return,Medium
+Food,9.26,2,43.0,Michigan,Debit Card,Overnight,5,8,6,0.151,4.4,Returned,0,0.2781796325028565,Not Return,Low
+Electronics,13.37,1,45.0,Georgia,UPI,Express,5,2,16,0.148,3.9,Returned,1,0.619299843649687,Return,Medium-High
+Food,10.39,1,48.0,California,UPI,Express,5,1,14,0.326,3.5,Not Returned,0,0.148207377127403,Not Return,Very Low
+Beauty,15.91,2,45.0,Michigan,UPI,Express,30,1,12,0.035,4.3,Returned,0,0.26379270188910287,Not Return,Low
+Food,156.12,2,45.0,Ohio,PayPal,Express,0,6,12,0.082,2.2,Not Returned,1,0.503029411219163,Return,Medium
+Automotive,20.7,1,29.0,Michigan,Cash on Delivery,Standard,20,5,12,0.023,,Returned,0,0.26756024958255403,Not Return,Low
+Electronics,,1,27.0,Pennsylvania,PayPal,Same Day,10,18,10,0.065,4.8,Returned,1,0.9466090942663644,Return,Very High
+Automotive,98.94,1,49.0,Pennsylvania,UPI,Standard,5,4,7,0.369,4.2,Not Returned,0,0.42285961183450105,Not Return,Medium
+Automotive,29.83,4,41.0,Florida,Debit Card,Overnight,15,3,8,0.192,4.4,Not Returned,1,0.672048570093891,Return,Medium-High
+,65.16,2,50.0,North Carolina,Credit Card,Standard,10,5,11,0.04,5.0,Not Returned,0,0.18317021640112452,Not Return,Very Low
+Electronics,23.21,2,18.0,North Carolina,Cash on Delivery,Standard,20,5,14,0.007,3.6,Not Returned,1,0.8499808057873083,Return,Very High
+Automotive,8.83,4,30.0,California,Cash on Delivery,Overnight,25,3,10,0.005,3.0,Returned,1,0.8190514789620438,Return,Very High
+Home & Garden,68.1,1,66.0,Ohio,PayPal,Overnight,5,2,13,0.145,4.9,Not Returned,0,0.39735566447508214,Not Return,Medium-Low
+Home & Garden,11.06,4,46.0,Illinois,Cash on Delivery,Overnight,5,4,14,0.061,4.9,Returned,0,0.3889040500505004,Not Return,Medium-Low
+Electronics,28.23,2,42.0,Pennsylvania,UPI,Standard,10,4,14,0.466,4.3,Not Returned,1,0.6156669928887443,Return,Medium-High
+Books,23.11,1,48.0,California,UPI,Standard,25,4,9,0.067,3.5,Not Returned,0,0.3756405936004028,Not Return,Medium-Low
+Health,53.29,2,71.0,Illinois,PayPal,Overnight,0,7,10,0.071,3.7,Not Returned,1,0.7119995004138434,Return,High
+Beauty,27.1,3,67.0,North Carolina,UPI,Same Day,10,4,14,0.02,2.4,Not Returned,0,0.3413758739042233,Not Return,Medium-Low
+Health,39.85,2,18.0,Florida,Debit Card,Same Day,10,1,10,0.223,4.8,Returned,0,0.30303386319846004,Not Return,Medium-Low
+Food,10.97,5,19.0,Michigan,PayPal,Express,15,2,15,0.09,4.8,Returned,1,0.7162569787321819,Return,High
+Beauty,270.51,1,,Pennsylvania,Debit Card,Overnight,0,3,14,0.064,2.4,Not Returned,1,0.8262871867986336,Return,Very High
+Food,15.18,3,26.0,California,Credit Card,Express,15,4,7,0.125,4.6,Not Returned,0,0.1791930718774102,Not Return,Very Low
+Automotive,131.79,1,38.0,New York,Debit Card,Same Day,25,6,12,0.085,4.1,Not Returned,0,0.2692109475538216,Not Return,Low
+Clothing,51.15,3,41.0,Illinois,Credit Card,Express,0,4,12,0.153,2.7,Returned,1,0.8538595485144747,Return,Very High
+Electronics,50.75,2,18.0,Michigan,Credit Card,Overnight,0,1,24,0.028,2.5,Returned,1,0.5473682722039749,Return,Medium
+Beauty,61.5,1,18.0,Pennsylvania,Debit Card,Overnight,30,1,11,0.057,4.1,Returned,1,0.6451207556650209,Return,Medium-High
+Beauty,8.23,1,26.0,North Carolina,PayPal,Overnight,0,6,10,0.065,3.3,Not Returned,0,0.2900634780175322,Not Return,Low
+Automotive,106.67,1,51.0,Ohio,UPI,Standard,20,3,10,0.18,5.0,Not Returned,0,0.14957473037473065,Not Return,Very Low
+Books,28.22,1,54.0,Illinois,UPI,Express,10,4,14,0.259,4.7,Not Returned,0,0.37614703216536427,Not Return,Medium-Low
+Home & Garden,132.87,1,63.0,North Carolina,Credit Card,Same Day,0,3,16,0.043,4.2,Returned,0,0.31805590473581197,Not Return,Medium-Low
+Automotive,39.01,2,37.0,Pennsylvania,Credit Card,Same Day,20,2,17,0.225,4.2,Not Returned,1,0.5194942266888627,Return,Medium
+Toys,,2,50.0,Illinois,PayPal,Same Day,5,3,14,0.021,5.0,Not Returned,0,0.47269081955630804,Not Return,Medium
+Home & Garden,13.98,3,53.0,Michigan,Cash on Delivery,Standard,10,4,6,0.111,4.5,Returned,0,0.31184752818425476,Not Return,Medium-Low
+Electronics,22.44,4,30.0,Pennsylvania,Debit Card,Standard,5,4,10,0.101,4.2,Not Returned,1,0.7076948992073266,Return,High
+Home & Garden,65.37,2,43.0,Georgia,Credit Card,Overnight,10,8,10,0.269,2.7,Not Returned,1,0.5967894035049611,Return,Medium
+Books,13.78,3,47.0,California,UPI,Same Day,0,1,15,0.173,5.0,Not Returned,0,0.1777577144821214,Not Return,Very Low
+Home & Garden,7.45,3,24.0,Michigan,PayPal,Standard,5,1,14,0.029,2.6,Not Returned,0,0.1639817141669611,Not Return,Very Low
+Electronics,20.66,1,62.0,Illinois,Debit Card,Overnight,30,3,17,0.187,3.4,Returned,1,0.7617954209731556,Return,High
+Books,95.2,1,37.0,Ohio,PayPal,Same Day,5,6,6,0.146,2.0,Returned,0,0.42643583320787515,Not Return,Medium
+,222.11,1,39.0,North Carolina,Debit Card,Express,15,7,15,0.292,4.2,Not Returned,0,0.2570891531962885,Not Return,Low
+Beauty,24.3,1,23.0,New York,Debit Card,Overnight,5,2,16,0.068,3.9,Returned,1,0.6426808447168679,Return,Medium-High
+Beauty,11.09,1,26.0,North Carolina,Credit Card,Standard,15,1,13,0.092,4.5,Not Returned,1,0.5796346259769638,Return,Medium
+Food,32.82,1,18.0,Illinois,PayPal,Standard,0,2,17,0.277,2.0,Not Returned,0,0.23496400238571294,Not Return,Low
+Health,52.75,4,38.0,North Carolina,PayPal,Overnight,30,5,12,0.253,4.8,Not Returned,0,0.4703064082801729,Not Return,Medium
+Health,75.2,3,75.0,California,UPI,Overnight,10,4,10,0.033,2.9,Not Returned,1,0.6986112939627683,Return,Medium-High
+Home & Garden,305.26,1,22.0,Pennsylvania,UPI,Standard,0,6,15,0.124,3.6,Returned,0,0.13906949183332076,Not Return,Very Low
+Beauty,54.83,1,82.0,New York,Credit Card,Express,0,9,17,0.147,4.6,Returned,0,0.493225769708399,Not Return,Medium
+Electronics,198.33,1,59.0,Texas,Credit Card,Same Day,0,3,13,0.163,4.0,Returned,1,0.762818395515335,Return,High
+Sports,29.47,2,30.0,Illinois,Cash on Delivery,Express,10,2,13,0.029,4.0,Not Returned,1,0.7873533823259652,Return,High
+Sports,48.32,2,38.0,Florida,UPI,Overnight,5,1,9,0.316,4.5,Returned,1,0.5405166271291718,Return,Medium
+Books,26.22,3,35.0,Texas,Debit Card,Express,20,1,7,0.013,4.1,Returned,0,0.38830254246723517,Not Return,Medium-Low
+Beauty,24.24,1,63.0,North Carolina,PayPal,Standard,5,1,12,0.047,3.4,Not Returned,0,0.2330128142008914,Not Return,Low
+Beauty,35.27,3,45.0,Illinois,Credit Card,Overnight,0,2,20,0.295,3.5,Not Returned,1,0.57116539652967,Return,Medium
+Sports,34.72,5,55.0,Georgia,PayPal,Same Day,10,8,15,0.12,3.9,Returned,1,0.8828035257984657,Return,Very High
+Beauty,25.96,1,43.0,Florida,PayPal,Standard,15,6,13,0.111,2.8,Not Returned,1,0.5384725867806281,Return,Medium
+Home & Garden,27.27,3,36.0,New York,Cash on Delivery,Standard,0,2,9,0.079,4.7,Not Returned,0,0.27994818326136583,Not Return,Low
+Toys,119.95,2,42.0,Ohio,UPI,Same Day,0,15,12,0.043,4.0,Returned,0,0.34524258519444795,Not Return,Medium-Low
+Clothing,299.41,2,31.0,Georgia,Credit Card,Same Day,0,2,8,0.019,3.8,Returned,0,0.38197122995015587,Not Return,Medium-Low
+Health,28.54,2,18.0,Texas,PayPal,Express,15,9,12,0.134,4.9,Returned,0,0.14168938014605537,Not Return,Very Low
+Food,33.38,3,50.0,Pennsylvania,Credit Card,Overnight,15,11,13,0.127,3.6,Not Returned,1,0.6202859737012892,Return,Medium-High
+Books,71.68,2,18.0,California,Debit Card,Same Day,10,5,9,0.157,3.5,Returned,0,0.40818652431131697,Not Return,Medium
+Toys,787.08,3,33.0,Ohio,Cash on Delivery,Same Day,20,2,9,0.046,3.2,Not Returned,1,0.5514680638911839,Return,Medium
+Sports,48.22,4,31.0,Georgia,Debit Card,Overnight,20,3,7,0.036,4.0,Not Returned,1,0.580193734589449,Return,Medium
+Health,107.27,2,47.0,Pennsylvania,Credit Card,Same Day,10,4,15,0.106,4.0,Not Returned,1,0.5340460943680598,Return,Medium
+Beauty,179.47,5,61.0,Pennsylvania,Credit Card,Same Day,20,1,12,0.343,3.0,Returned,1,0.8371791244113038,Return,Very High
+Food,60.93,2,56.0,Illinois,UPI,Express,0,1,18,0.118,3.5,Not Returned,0,0.32105122833871025,Not Return,Medium-Low
+Beauty,102.88,2,48.0,Georgia,PayPal,Standard,0,1,6,0.081,,Not Returned,1,0.7796485215926865,Return,High
+Electronics,77.25,2,28.0,New York,PayPal,Standard,5,6,7,0.096,3.0,Not Returned,1,0.8959399784237987,Return,Very High
+,113.21,1,35.0,North Carolina,Debit Card,Standard,0,9,12,0.125,2.0,Not Returned,1,0.7788945118415282,Return,High
+Food,17.62,3,33.0,Florida,Cash on Delivery,Standard,10,6,12,0.293,3.5,Not Returned,1,0.5682019907300626,Return,Medium
+Food,53.72,2,30.0,Florida,PayPal,Same Day,25,8,9,0.166,2.0,Not Returned,1,0.9284586308265967,Return,Very High
+Sports,68.93,2,31.0,Texas,UPI,Overnight,0,2,11,0.057,3.2,Not Returned,0,0.46243418071697595,Not Return,Medium
+Food,68.06,4,31.0,Texas,Debit Card,Overnight,0,3,17,0.065,3.1,Not Returned,1,0.55556065779986,Return,Medium
+Home & Garden,124.38,1,30.0,Florida,Debit Card,Express,10,3,13,0.113,,Returned,0,0.3467138224640118,Not Return,Medium-Low
+Beauty,66.83,2,52.0,New York,UPI,Express,25,5,16,0.135,2.7,Returned,1,0.7304528564576885,Return,High
+Toys,15.95,2,22.0,California,Cash on Delivery,Same Day,5,2,13,0.036,2.9,Returned,1,0.7033721386545717,Return,High
+Automotive,,3,27.0,Michigan,UPI,Overnight,10,7,9,0.083,3.3,Not Returned,1,0.8695913378641248,Return,Very High
+Food,20.19,2,18.0,North Carolina,Cash on Delivery,Overnight,0,11,13,0.362,3.1,Not Returned,1,0.6052926902693213,Return,Medium-High
+Books,23.82,3,59.0,California,UPI,Standard,0,6,7,0.26,5.0,Not Returned,0,0.43925318940819585,Not Return,Medium
+Electronics,30.67,3,26.0,Illinois,UPI,Same Day,30,3,11,0.108,2.6,Not Returned,1,0.9363986683672284,Return,Very High
+Home & Garden,40.44,1,47.0,Michigan,Credit Card,Same Day,30,2,7,0.061,3.3,Not Returned,1,0.5749907155668329,Return,Medium
+Health,11.14,1,45.0,Michigan,Debit Card,Standard,0,1,15,0.195,4.0,Not Returned,0,0.36666999771397596,Not Return,Medium-Low
+Automotive,122.14,2,57.0,Georgia,UPI,Same Day,30,1,6,0.01,,Returned,0,0.3091753724851377,Not Return,Medium-Low
+Toys,15.8,1,34.0,New York,UPI,Same Day,10,3,19,0.285,3.3,Not Returned,1,0.8496766611147332,Return,Very High
+Automotive,183.66,1,23.0,New York,PayPal,Express,20,3,14,0.067,1.8,Returned,1,0.7423753498273986,Return,High
+Food,16.24,2,18.0,Michigan,Debit Card,Overnight,10,7,13,0.154,3.5,Returned,0,0.4114595452345862,Not Return,Medium
+Sports,141.7,1,18.0,Georgia,PayPal,Same Day,10,2,13,0.027,5.0,Returned,1,0.5509381808182742,Return,Medium
+Electronics,43.57,2,40.0,North Carolina,Debit Card,Express,10,3,14,0.216,4.0,Returned,1,0.78239049079058,Return,High
+Electronics,9.54,2,49.0,Michigan,PayPal,Overnight,15,5,17,0.167,3.9,Not Returned,1,0.571364019330624,Return,Medium
+Health,17.48,2,45.0,Ohio,UPI,Standard,0,5,12,0.148,2.6,Not Returned,0,0.25125504401415183,Not Return,Low
+Sports,147.5,2,18.0,Texas,UPI,Express,0,7,10,0.041,2.5,Returned,1,0.6644765008292317,Return,Medium-High
+Beauty,66.94,2,53.0,Texas,Credit Card,Express,5,4,13,0.072,3.7,Not Returned,1,0.6296373161026465,Return,Medium-High
+Clothing,41.64,1,27.0,California,PayPal,Overnight,15,1,7,0.148,2.3,Not Returned,1,0.7042259045865467,Return,High
+Home & Garden,6.08,2,24.0,Illinois,Cash on Delivery,Standard,0,5,10,0.048,4.5,Returned,1,0.514930853708964,Return,Medium
+Electronics,156.12,2,27.0,Texas,Credit Card,Express,15,2,14,0.063,2.9,Not Returned,1,0.6113116864137033,Return,Medium-High
+Books,240.66,4,39.0,Pennsylvania,PayPal,Same Day,30,9,14,0.244,3.7,Returned,1,0.6141023649500104,Return,Medium-High
+Electronics,,2,18.0,California,PayPal,Same Day,0,4,10,0.014,1.8,Not Returned,1,0.6566533007170499,Return,Medium-High
+Automotive,25.69,5,37.0,Texas,Credit Card,Same Day,15,4,11,0.221,3.3,Not Returned,0,0.3796799469318707,Not Return,Medium-Low
+Electronics,63.09,2,44.0,Illinois,UPI,Standard,5,19,18,0.047,2.5,Returned,0,0.39915188860467105,Not Return,Medium-Low
+Electronics,69.61,1,54.0,New York,PayPal,Express,20,7,10,0.237,1.4,Returned,1,0.957511354062468,Return,Very High
+Clothing,11.31,3,40.0,New York,UPI,Same Day,0,5,11,0.315,4.2,Not Returned,1,0.8576368353961972,Return,Very High
+Clothing,52.59,1,18.0,North Carolina,Credit Card,Standard,15,3,14,0.146,5.0,Not Returned,1,0.89177487475639,Return,Very High
+Toys,117.21,1,40.0,Michigan,UPI,Same Day,20,1,11,0.15,4.8,Returned,0,0.2755388931255495,Not Return,Low
+Beauty,88.95,1,22.0,Ohio,Debit Card,Overnight,25,3,11,0.058,4.4,Not Returned,0,0.41785358262235034,Not Return,Medium
+Books,16.44,2,21.0,New York,Cash on Delivery,Express,15,1,17,0.096,3.3,Not Returned,1,0.8178808367895997,Return,Very High
+Electronics,20.57,2,18.0,Georgia,PayPal,Express,10,12,8,0.052,4.5,Not Returned,0,0.3166561557225519,Not Return,Medium-Low
+Electronics,91.06,1,18.0,Texas,Cash on Delivery,Standard,10,5,13,0.03,4.9,Not Returned,1,0.7457722040347576,Return,High
+Home & Garden,79.01,4,29.0,Georgia,UPI,Standard,20,9,10,0.311,3.8,Not Returned,1,0.814961364935079,Return,Very High
+Clothing,5.88,1,54.0,Illinois,PayPal,Express,10,2,11,0.333,2.5,Not Returned,1,0.7239936043286952,Return,High
+Books,5.0,1,71.0,New York,UPI,Same Day,0,2,14,0.115,3.2,Not Returned,0,0.06506827160370894,Not Return,Very Low
+Health,41.73,1,29.0,Ohio,Debit Card,Same Day,25,6,10,0.103,5.0,Not Returned,0,0.1754977853221865,Not Return,Very Low
+Toys,26.29,1,54.0,Illinois,Credit Card,Overnight,15,1,14,0.089,3.6,Returned,1,0.6022677872260241,Return,Medium-High
+Beauty,34.18,2,32.0,Pennsylvania,PayPal,Same Day,15,2,12,0.004,1.0,Returned,1,0.9081729677258039,Return,Very High
+Sports,30.87,2,18.0,Pennsylvania,Debit Card,Standard,0,12,11,0.223,2.2,Not Returned,1,0.8125739053986034,Return,Very High
+Beauty,108.38,2,48.0,Georgia,Debit Card,Standard,15,3,8,0.201,3.3,Not Returned,1,0.6267490173739914,Return,Medium-High
+Automotive,49.07,1,41.0,Michigan,PayPal,Same Day,5,1,15,0.071,4.7,Returned,0,0.395985046598611,Not Return,Medium-Low
+Electronics,56.88,1,65.0,California,UPI,Standard,15,1,10,0.211,3.4,Not Returned,0,0.4245686916442716,Not Return,Medium
+Toys,13.36,1,18.0,Michigan,Debit Card,Express,0,1,10,0.027,4.8,Not Returned,0,0.4622105708296347,Not Return,Medium
+Automotive,5.0,4,79.0,North Carolina,Cash on Delivery,Express,15,9,13,0.155,3.2,Returned,1,0.7622578764073155,Return,High
+Books,122.88,1,61.0,Michigan,Debit Card,Same Day,30,2,21,0.263,1.7,Not Returned,1,0.781490805728315,Return,High
+Sports,307.63,2,,North Carolina,UPI,Express,0,19,11,0.19,3.2,Returned,1,0.7229812511341047,Return,High
+Clothing,32.84,5,33.0,North Carolina,UPI,Express,30,11,12,0.165,4.0,Returned,1,0.9317395826767966,Return,Very High
+Toys,55.95,2,27.0,Ohio,Cash on Delivery,Overnight,5,14,12,0.098,4.0,Not Returned,1,0.6192702972559747,Return,Medium-High
