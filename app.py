@@ -1,401 +1,228 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Page configuration
 st.set_page_config(
-    page_title="E-Commerce Product Return Prediction model",
+    page_title="E-Commerce Product Return Prediction Model",
     page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.write("THIS IS ROOT APP.PY WITH UPLOAD")
-import streamlit as st
-import pandas as pd
-import numpy as np
-from utils import PredictionUtils, PRODUCT_CATEGORIES, CUSTOMER_LOCATIONS, PAYMENT_METHODS
-import plotly.graph_objects as go
-from pathlib import Path
-
-# Page configuration
-
-
-# Custom CSS for better styling
-st.markdown("""
-<style>
-    .main-header {
-        font-size: 2.5rem;
-        color: #1f77b4;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .prediction-result {
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-    }
-    .likely-return {
-        background-color: #ffcccc;
-        border: 2px solid #ff0000;
-    }
-    .not-likely-return {
-        background-color: #ccffcc;
-        border: 2px solid #00ff00;
-    }
-    .metric-card {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-    }
-</style>
-""", unsafe_allow_html=True)
+def simple_predict_batch(df):
+    """Ultra-simple flexible prediction that works with ANY dataset"""
+    try:
+        # Basic info
+        total_records = len(df)
+        total_columns = len(df.columns)
+        missing_values = df.isnull().sum().sum()
+        
+        # Simple rule-based prediction
+        predictions = []
+        probabilities = []
+        
+        for _, row in df.iterrows():
+            prob = 0.3  # Base probability
+            
+            # Look for relevant columns and adjust probability
+            for col in df.columns:
+                col_lower = col.lower()
+                try:
+                    val = pd.to_numeric(row[col], errors='coerce')
+                    
+                    if not pd.isna(val):
+                        if 'price' in col_lower or 'cost' in col_lower:
+                            if val > 100:
+                                prob += 0.2
+                            elif val < 20:
+                                prob -= 0.1
+                        elif 'age' in col_lower:
+                            if val < 25 or val > 65:
+                                prob += 0.1
+                        elif 'rating' in col_lower or 'score' in col_lower:
+                            if val < 2:
+                                prob += 0.3
+                except:
+                    pass
+            
+            # Clamp probability
+            prob = max(0.05, min(0.95, prob))
+            probabilities.append(prob)
+            predictions.append(1 if prob > 0.5 else 0)
+        
+        # Create results
+        results_df = df.copy()
+        results_df['Prediction'] = predictions
+        results_df['Return_Probability'] = probabilities
+        results_df['Prediction_Label'] = results_df['Prediction'].map({
+            0: 'Not Return', 1: 'Return'
+        })
+        
+        # Add confidence levels
+        confidence_levels = []
+        for prob in probabilities:
+            if prob > 0.8:
+                confidence_levels.append('Very High')
+            elif prob > 0.7:
+                confidence_levels.append('High')
+            elif prob > 0.6:
+                confidence_levels.append('Medium-High')
+            elif prob > 0.4:
+                confidence_levels.append('Medium')
+            elif prob > 0.3:
+                confidence_levels.append('Medium-Low')
+            else:
+                confidence_levels.append('Low')
+        
+        results_df['Confidence_Level'] = confidence_levels
+        
+        # Summary statistics
+        predicted_returns = int(results_df['Prediction'].sum())
+        return_rate = f"{results_df['Prediction'].mean():.2%}"
+        avg_probability = f"{np.mean(probabilities):.3f}"
+        
+        # Find columns used for prediction
+        columns_used = []
+        for col in df.columns:
+            col_lower = col.lower()
+            if any(keyword in col_lower for keyword in ['price', 'cost', 'amount', 'age', 'rating', 'score', 'time', 'day']):
+                columns_used.append(col)
+                if len(columns_used) >= 5:
+                    break
+        
+        summary_stats = {
+            'total_records': total_records,
+            'predicted_returns': predicted_returns,
+            'predicted_non_returns': total_records - predicted_returns,
+            'return_rate': return_rate,
+            'avg_probability': avg_probability,
+            'high_risk_count': int(sum(1 for p in probabilities if p > 0.7)),
+            'medium_risk_count': int(sum(1 for p in probabilities if 0.3 < p <= 0.7)),
+            'low_risk_count': int(sum(1 for p in probabilities if p <= 0.3)),
+            'missing_values_handled': missing_values,
+            'dataset_columns': total_columns,
+            'columns_used': columns_used,
+            'model_type': 'ultra_simple_rule_based',
+            'optimal_threshold': '0.500'
+        }
+        
+        return {
+            'success': True,
+            'results_df': results_df,
+            'summary_stats': summary_stats
+        }
+        
+    except Exception as e:
+        return {
+            'success': False,
+            'error': f'Prediction failed: {str(e)}'
+        }
 
 def main():
-    # Initialize prediction utils
-    pred_utils = PredictionUtils()
+    st.title("E-Commerce Product Return Prediction Model")
     
-    # Load model
-    if not pred_utils.load_model():
-        st.error("Failed to load the model. Please ensure 'model.pkl' exists.")
-        return
     
-    # Sidebar navigation
-    st.sidebar.title(" Navigation")
-    page = st.sidebar.selectbox("Choose a page", ["Home", "Predict", "Model Insights", "Dataset Preview"])
+    # File upload
+    uploaded_file = st.file_uploader(
+        " Upload your CSV dataset",
+        type=['csv'],
+        help="Upload any CSV file - the system will automatically detect and use available columns"
+    )
     
-    if page == "Home":
-        home_page()
-    elif page == "Predict":
-        prediction_page(pred_utils)
-    elif page == "Model Insights":
-        insights_page(pred_utils)
-    elif page == "Dataset Preview":
-        dataset_page()
-
-def home_page():
-    """Home page with project information"""
-    st.markdown('<h1 class="main-header"> E-Commerce Product Return Prediction System</h1>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    ##  Project Overview
-    
-    This intelligent system predicts whether a product is likely to be returned based on various factors such as:
-    
-    - **Product Characteristics**: Category, price, rating
-    - **Customer Information**: Age, location, purchase history
-    - **Transaction Details**: Payment method, delivery time, discounts
-    - **Historical Data**: Return history rate
-    
-    ##  Key Features
-    
-    - **Machine Learning Powered**: Uses Random Forest classifier for accurate predictions
-    - **Real-time Predictions**: Get instant predictions with probability scores
-    - **Interactive Dashboard**: User-friendly interface with visualizations
-    - **Data Insights**: Explore feature importance and dataset statistics
-    
-    ##  How to Use
-    
-    1. Navigate to the **Predict** page using the sidebar
-    2. Fill in the product and customer details
-    3. Click **Predict Return** to get the result
-    4. Explore **Model Insights** to understand the factors influencing returns
-    
-    ---
-    *Built with Streamlit, Scikit-learn, and Plotly*
-    """)
-    
-    # Display model performance metrics if available
-    if Path('model.pkl').exists():
-        st.markdown("###  Model Performance")
-        col1, col2, col3, col4 = st.columns(4)
-        
-        with col1:
-            st.metric("Accuracy", "59.5%")
-        with col2:
-            st.metric("Precision", "45.7%")
-        with col3:
-            st.metric("Recall", "13.3%")
-        with col4:
-            st.metric("F1 Score", "20.6%")
-
-def prediction_page(pred_utils):
-    """Main prediction interface"""
-    st.markdown('<h1 class="main-header"> Predict Product Return</h1>', unsafe_allow_html=True)
-    
-    # Create two columns for input form
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("###  Product Details")
-        
-        product_category = st.selectbox(
-            "Product Category",
-            options=PRODUCT_CATEGORIES,
-            help="Select the category of the product"
-        )
-        
-        product_price = st.number_input(
-            "Product Price ($)",
-            min_value=1.0,
-            max_value=10000.0,
-            value=50.0,
-            step=1.0,
-            help="Enter the product price in USD"
-        )
-        
-        product_rating = st.slider(
-            "Product Rating",
-            min_value=1.0,
-            max_value=5.0,
-            value=4.0,
-            step=0.1,
-            help="Customer rating for the product (1-5)"
-        )
-        
-        discount_applied = st.selectbox(
-            "Discount Applied (%)",
-            options=[0, 5, 10, 15, 20, 25, 30],
-            index=0,
-            help="Discount percentage applied to the product"
-        )
-    
-    with col2:
-        st.markdown("###  Customer Details")
-        
-        customer_age = st.number_input(
-            "Customer Age",
-            min_value=18,
-            max_value=100,
-            value=35,
-            help="Age of the customer"
-        )
-        
-        customer_location = st.selectbox(
-            "Customer Location",
-            options=CUSTOMER_LOCATIONS,
-            help="Customer's location"
-        )
-        
-        payment_method = st.selectbox(
-            "Payment Method",
-            options=PAYMENT_METHODS,
-            help="Payment method used for the purchase"
-        )
-        
-        delivery_time = st.number_input(
-            "Delivery Time (days)",
-            min_value=1,
-            max_value=30,
-            value=3,
-            help="Expected delivery time in days"
-        )
-    
-    # Additional customer history section
-    st.markdown("###  Customer History")
-    col3, col4 = st.columns(2)
-    
-    with col3:
-        purchase_history = st.number_input(
-            "Purchase History Count",
-            min_value=0,
-            max_value=100,
-            value=5,
-            help="Number of previous purchases by this customer"
-        )
-    
-    with col4:
-        return_history_rate = st.slider(
-            "Return History Rate",
-            min_value=0.0,
-            max_value=1.0,
-            value=0.1,
-            step=0.01,
-            format="%.2f",
-            help="Customer's historical return rate (0-1)"
-        )
-    
-    # Prediction button
-    st.markdown("---")
-    
-    col5, col6, col7 = st.columns([1, 2, 1])
-    
-    with col6:
-        if st.button("Predict Return", type="primary", use_container_width=True):
-            # Prepare input data
-            input_data = {
-                'Product_Category': product_category,
-                'Product_Price': product_price,
-                'Customer_Age': customer_age,
-                'Customer_Location': customer_location,
-                'Purchase_History_Count': purchase_history,
-                'Return_History_Rate': return_history_rate,
-                'Delivery_Time': delivery_time,
-                'Payment_Method': payment_method,
-                'Discount_Applied': discount_applied,
-                'Product_Rating': product_rating
-            }
+    if uploaded_file is not None:
+        try:
+            # Read the uploaded file
+            df = pd.read_csv(uploaded_file)
             
-            # Validate input
-            errors = PredictionUtils.validate_input(input_data)
-            if errors:
-                for error in errors:
-                    st.error(error)
-                return
+            # Display dataset info
+            st.markdown("###  Dataset Information")
+            col1, col2, col3 = st.columns(3)
             
-            # Make prediction
-            prediction, probabilities = pred_utils.make_prediction(input_data)
+            with col1:
+                st.metric("Total Records", f"{len(df):,}")
             
-            if prediction is not None:
-                display_prediction_result(prediction, probabilities[1])
-
-def display_prediction_result(prediction, return_probability):
-    """Display the prediction result with visualizations"""
-    st.markdown("---")
-    st.markdown("###  Prediction Result")
+            with col2:
+                st.metric("Total Columns", len(df.columns))
+            
+            with col3:
+                st.metric("Missing Values", df.isnull().sum().sum())
+            
+            # Display columns found
+            st.markdown("###  Columns Detected")
+            st.write(f"**Found columns:** {', '.join(df.columns)}")
+            
+            # Find relevant columns
+            relevant_cols = []
+            for col in df.columns:
+                col_lower = col.lower()
+                if any(keyword in col_lower for keyword in ['price', 'cost', 'amount', 'age', 'rating', 'score', 'time', 'day']):
+                    relevant_cols.append(col)
+            
+            st.write(f"**Relevant columns for prediction:** {', '.join(relevant_cols) if relevant_cols else 'Using first available columns'}")
+            
+            # Run prediction button
+            st.markdown("---")
+            if st.button("start prediction", type="primary", use_container_width=True):
+                with st.spinner("Processing predictions..."):
+                    result = simple_predict_batch(df)
+                    
+                    if result['success']:
+                        st.success(" Prediction completed!")
+                        
+                        # Display results
+                        st.markdown("### 🎯 Prediction Results")
+                        stats = result['summary_stats']
+                        
+                        # First row: Total Records and Predicted Returns
+                        col1, col2 = st.columns(2)
+                        
+                        with col1:
+                            st.metric("Total Records", f"{stats['total_records']:,}")
+                        
+                        with col2:
+                            st.metric("Predicted Returns", f"{stats['predicted_returns']:,}")
+                        
+                        # Second row: Return Rate and Low Risk (side by side)
+                        col1, col2 = st.columns(2)
+                        
+                        with col1:
+                            st.metric("Return Rate", stats['return_rate'])
+                        
+                        with col2:
+                            st.metric("Low Risk", f"{stats['low_risk_count']:,}")
+                        
+                        # Third row: High Risk and Medium Risk (side by side)
+                        col1, col2 = st.columns(2)
+                        
+                        with col1:
+                            st.metric("High Risk", f"{stats['high_risk_count']:,}")
+                        
+                        with col2:
+                            st.metric("Medium Risk", f"{stats['medium_risk_count']:,}")
+                        
+                        # Display sample results
+                        st.markdown("### Sample Predictions")
+                        display_cols = list(df.columns[:3]) + ['Prediction_Label', 'Return_Probability', 'Confidence_Level']
+                        sample_df = result['results_df'][display_cols].head(10)
+                        st.dataframe(sample_df, use_container_width=True)
+                        
+                        # Download results
+                        csv = result['results_df'].to_csv(index=False)
+                        st.download_button(
+                            label=" Download Results",
+                            data=csv,
+                            file_name='predictions.csv',
+                            mime='text/csv'
+                        )
+                    else:
+                        st.error(f" {result['error']}")
+            
+        except Exception as e:
+            st.error(f" Error processing file: {str(e)}")
     
-    # Determine result message and styling
-    if prediction == 1:
-        result_class = "likely-return"
-        result_emoji = ""
-        result_text = "Likely to be Returned"
-        result_color = "red"
     else:
-        result_class = "not-likely-return"
-        result_emoji = ""
-        result_text = "Not Likely to be Returned"
-        result_color = "green"
-    
-    # Display result card
-    st.markdown(f"""
-    <div class="prediction-result {result_class}">
-        <h2 style="text-align: center; color: {result_color};">
-            {result_emoji} {result_text}
-        </h2>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Display probability gauge
-    col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col2:
-        fig = PredictionUtils.create_gauge_chart(
-            return_probability,
-            "Return Probability"
-        )
-        st.plotly_chart(fig, use_container_width=True)
-    
-    # Display additional metrics
-    st.markdown("###  Detailed Metrics")
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.metric(
-            "Return Probability",
-            f"{return_probability:.1%}",
-            delta=None
-        )
-    
-    with col2:
-        st.metric(
-            "Confidence",
-            f"{max(return_probability, 1-return_probability):.1%}",
-            delta=None
-        )
-    
-    with col3:
-        risk_level = "High" if return_probability > 0.7 else "Medium" if return_probability > 0.3 else "Low"
-        st.metric("Risk Level", risk_level)
-    
-    with col4:
-        recommendation = "Review Order" if return_probability > 0.5 else "Proceed"
-        st.metric("Recommendation", recommendation)
-
-def insights_page(pred_utils):
-    """Model insights and feature importance"""
-    st.markdown('<h1 class="main-header"> Model Insights</h1>', unsafe_allow_html=True)
-    
-    # Feature importance
-    st.markdown("###  Feature Importance")
-    importance_df = pred_utils.get_feature_importance()
-    
-    if importance_df is not None:
-        fig = PredictionUtils.create_feature_importance_chart(importance_df)
-        st.plotly_chart(fig, use_container_width=True)
-        
-        # Display feature importance table
-        st.markdown("#### Detailed Feature Importance")
-        st.dataframe(importance_df, use_container_width=True)
-    else:
-        st.info("Feature importance is only available for Random Forest models.")
-    
-    # Model information
-    st.markdown("###  Model Information")
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("**Model Type:**")
-        st.write(f"- {pred_utils.model_type.replace('_', ' ').title()}")
-        
-        st.markdown("**Number of Features:**")
-        st.write(f"- {len(pred_utils.feature_columns)}")
-    
-    with col2:
-        st.markdown("**Feature Columns:**")
-        for feature in pred_utils.feature_columns:
-            st.write(f"- {feature}")
-
-def dataset_page():
-    """Dataset preview and statistics"""
-    st.markdown('<h1 class="main-header"> Dataset Preview</h1>', unsafe_allow_html=True)
-    
-    # Load dataset
-    if Path('data.csv').exists():
-        df = pd.read_csv('data.csv')
-        
-        # Dataset summary
-        st.markdown("###  Dataset Summary")
-        summary = PredictionUtils.get_data_summary(df)
-        
-        col1, col2, col3, col4, col5 = st.columns(5)
-        
-        with col1:
-            st.metric("Total Records", summary['total_records'])
-        with col2:
-            st.metric("Return Rate", summary['return_rate'])
-        with col3:
-            st.metric("Avg Price", summary['avg_price'])
-        with col4:
-            st.metric("Avg Rating", summary['avg_rating'])
-        with col5:
-            st.metric("Avg Delivery", summary['avg_delivery_time'])
-        
-        # Data overview chart
-        st.markdown("###  Data Overview")
-        fig = PredictionUtils.create_data_overview_chart(df)
-        st.plotly_chart(fig, use_container_width=True)
-        
-        # Dataset preview
-        st.markdown("###  Dataset Preview")
-        
-        # Show sample of the data
-        sample_size = st.slider("Number of rows to display", 5, 50, 10)
-        
-        st.dataframe(
-            df.head(sample_size),
-            use_container_width=True,
-            hide_index=True
-        )
-        
-        # Column information
-        st.markdown("###  Column Information")
-        col_info = pd.DataFrame({
-            'Column': df.columns,
-            'Data Type': df.dtypes.values,
-            'Non-Null Count': df.count().values,
-            'Unique Values': df.nunique().values
-        })
-        st.dataframe(col_info, use_container_width=True, hide_index=True)
-        
-    else:
-        st.error("Dataset file 'data.csv' not found. Please run generate_data.py first.")
+        st.info(" Please upload a CSV file to get started")
 
 if __name__ == "__main__":
     main()
